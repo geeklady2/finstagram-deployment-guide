@@ -37,6 +37,8 @@ Select the check box "write public repos", press the update button, and re-run g
 The URL/address that you paste into your browser window should match the following pattern:
 `https://gitpod.io/#https://github.com/*[my_github_username_here]*/finstagram`
 
+Note that this step will take a few minutes, this would be a good time to get a snack.
+
 7. Check that heroku has been properly installed by running the following command in your Gitpod terminal:
 
 ```
