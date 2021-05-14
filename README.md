@@ -3,14 +3,32 @@
 
 # Deployment
 
-1. In the root of your repository, create the two following files:
+1. Create some files needed to build a *docker container* for deployment, your finstagram application will run in a docker container on heroku. We will do this in a couple of steps using some *unix* commands in the terminal window. 
 
-```
-.gitpod.Dockerfile
-.gitpod.yml
-```
-
-Fill out these files based on the contents of the files of the same name in this repo (the files at the top of this guide)
+    1. In the terminal window type the following commands:
+    
+    ```
+    cd /workspace/finstagram 
+    touch .gitpod.Dockerfile
+    touch .gitpod.yml
+    ```
+  
+    2. Add the content to the docker file by typing the first line, copy and paste the remaining lines and press ctl-c when done. 
+    
+    ```
+    cat > .gitpod.Dockerfile
+    FROM gitpod/workspace-full
+    USER gitpod
+    RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sudo sh
+    ```
+  
+    3. Add the content to the yml (pronounced yaml) file by typing the first line, copy and paste the remaining lines and press ctl-c when done. 
+    
+    ```
+    cat > .gitpod.yml
+    image:
+    file: /.gitpod.Dockerfile
+    ```
 
 2. Update your Gemfile to match the Gemfile in this repo (the files at the top of this guide)
 
